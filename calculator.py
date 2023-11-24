@@ -2,10 +2,10 @@ import logging
 import time
 import unittest
 
-# Configure logging
+
 logging.basicConfig(filename='calculator.log', level=logging.ERROR)
 
-# Decorator function to log errors
+
 def log_errors(func):
     def wrapper(*args, **kwargs):
         try:
@@ -16,7 +16,7 @@ def log_errors(func):
             print(f"An error occurred. Check the log file for details.")
     return wrapper
 
-# Decorator function to calculate execution time
+
 def calculate_time(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
@@ -27,7 +27,6 @@ def calculate_time(func):
         return result
     return wrapper
 
-# Calculator class with decorated methods
 class Calculator:
     @staticmethod
     @log_errors
